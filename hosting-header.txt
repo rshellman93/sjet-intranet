@@ -1,0 +1,5 @@
+AddType application/x-httpd-php84 .php
+php_value upload_max_filesize 20M
+php_value post_max_size 22M
+php_value max_execution_time 60
+Header always set X-Robots-Tag "noindex, nofollow"

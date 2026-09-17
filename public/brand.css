@@ -1,0 +1,104 @@
+/* Sydjysk Eltekniq: colors and Roboto from sydjysk-eltekniq.dk. */
+@font-face {
+    font-family: Roboto;
+    src: url('/brand/roboto-latin.woff2') format('woff2');
+    font-style: normal;
+    font-weight: 300 700;
+    font-display: swap;
+}
+
+:root {
+    --brand-green: #90ca21;
+    --brand-blue: #20509c;
+    --brand-navy: #10284e;
+    --green: var(--brand-navy);
+    --green2: var(--brand-blue);
+    --lime: var(--brand-green);
+    --bg: #f5f7fa;
+    --ink: var(--brand-navy);
+    --muted: #657184;
+    --line: #dfe5ed;
+}
+
+body { font-family: Roboto, Arial, sans-serif; }
+h1, h2, h3 { font-weight: 700; }
+h1 { letter-spacing: -.8px; }
+:focus-visible { outline-color: var(--brand-blue); }
+.sidebar { background: var(--brand-navy); }
+.sidebar .brand { display: block; margin: 0 7px 44px; }
+.brand-logo { display: block; width: 184px; max-width: 100%; height: auto; }
+.sidebar .brand-logo { width: 184px; }
+.nav-label { color: #b5c6df; }
+.nav-item { color: #d5dfed; border-radius: 6px; }
+.nav-item:hover { background: #1b3d70; }
+.nav-item.selected { background: var(--brand-green); color: var(--brand-navy); }
+.nav-rule { background: #2a466c; }
+.sidebar-bottom { color: #b4c4db; }
+.sidebar-bottom a { color: #e1e9f4; }
+.sidebar :focus-visible { outline-color: var(--brand-green); }
+.topbar { background: #fff; border-top: 4px solid var(--brand-blue); }
+.breadcrumb span { color: #8a98ab; }
+.test-badge { color: #4e657d; border-color: #d9e2ed; background: #f6f8fb; }
+.user-initials, .avatar { background: #e8eef7; color: var(--brand-blue); }
+.hero {
+    background: var(--brand-navy);
+    border-top: 4px solid var(--brand-green);
+    border-radius: 9px;
+    padding-top: 28px;
+}
+.hero:after { color: #284978; }
+.hero .eyebrow { color: #b6e566; }
+.hero h2 { font-weight: 400; font-size: 29px; }
+.hero p { color: #dbe4f1; }
+.hero .btn { color: var(--brand-navy); background: var(--brand-green); border-color: var(--brand-green); }
+.btn {
+    background: var(--brand-green);
+    border-color: var(--brand-green);
+    color: var(--brand-navy);
+    border-radius: 24px;
+    font-weight: 700;
+}
+.btn:hover { filter: none; background: #a1d644; border-color: #a1d644; }
+.btn.secondary { color: var(--brand-blue); background: #fff; border-color: #c9d6e8; }
+.btn.secondary:hover { background: #edf3fb; border-color: #a9c0e0; }
+.btn.small { border-radius: 20px; }
+.card { border-color: var(--line); border-radius: 9px; }
+.card-icon { background: #edf5e1; color: #527e0c; }
+.shortcut:hover { border-color: var(--brand-green); box-shadow: 0 4px 16px #10284e08; }
+.shortcut h3 span { color: var(--brand-blue); }
+.pill { background: #ecf5df; color: #466815; }
+.pill.inactive { background: #eef0f4; color: #626b77; }
+.pill.waiting { background: #fff3d9; color: #845d0c; }
+.notice { border-left-color: var(--brand-green); }
+.alert.success { background: #ecf5df; color: #405f13; }
+label { color: #354b69; }
+input:not([type=checkbox]), select, textarea { border-color: #c9d3e0; }
+input[type=checkbox] { accent-color: var(--brand-blue); }
+th { background: #edf2f8; color: #52667f; }
+.codes { background: #edf2f8; }
+.auth-intro .brand { display: block; }
+.auth-intro .brand-logo { width: 245px; }
+.auth-intro h1 { color: var(--brand-navy); font-weight: 400; }
+.auth-card { border-top: 4px solid var(--brand-green); box-shadow: 0 12px 35px #10284e08; }
+.progress-list span { color: #537e13; }
+footer { color: #6e7c8f; }
+
+@media (max-width: 1100px) {
+    .sidebar .brand-logo { width: 162px; }
+}
+@media (max-width: 800px) {
+    .sidebar .brand { margin: 0; }
+    .sidebar .brand-logo { width: 138px; }
+    .sidebar nav { margin-top: 18px; }
+    .topbar { border-top: 0; }
+    .hero h2 { font-size: 26px; }
+    .auth-intro .brand-logo { width: 200px; }
+}
+@media print {
+    .hero { background: white; color: var(--brand-navy); }
+    .hero p, .hero .eyebrow { color: var(--brand-navy); }
+    .hero:after { display: none; }
+}
+@media (max-width: 480px) {
+    .hero:after { top: auto; bottom: 18px; right: 15px; font-size: 100px; line-height: 1; opacity: .5; }
+}

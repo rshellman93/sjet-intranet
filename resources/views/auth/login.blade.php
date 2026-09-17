@@ -1,0 +1,6 @@
+@extends('layout')
+@section('title','Log ind')
+@section('content')
+<div class="auth-grid"><section class="auth-intro"><div class="brand"><img class="brand-logo" src="/brand/logo.png" alt="Sydjysk Eltekniq" width="250" height="86"></div><h1>Et fælles sted.<br>En lettere hverdag.</h1><p>Viden, kollegaer og udvikling – lige ved hånden, når du har brug for det.</p><ul class="progress-list"><li><span>✓</span>Dit eget personlige login</li><li><span>✓</span>Kontakt til dine kollegaer</li><li><span>✓</span>Private oplysninger med begrænset adgang</li></ul></section><section class="card auth-card"><div class="eyebrow">VELKOMMEN INDENFOR</div><h2>Log ind på intranettet</h2><p class="muted">Brug din personlige mailadresse og adgangskode.</p><form method="post" action="/login">@csrf<label>Mailadresse<input type="email" name="email" value="{{ old('email') }}" placeholder="navn@sydjysk-eltekniq.dk" required autofocus autocomplete="username"></label><label>Adgangskode<input type="password" name="password" required autocomplete="current-password"></label><button class="btn" type="submit">Log ind <span aria-hidden="true">→</span></button></form><p class="auth-note"><a href="/forgot-password">Glemt adgangskode?</a></p>@if(app()->environment('local'))<div class="notice">Lokal udviklingsversion med fiktive testkonti.</div>@endif</section></div>
+@endsection
+

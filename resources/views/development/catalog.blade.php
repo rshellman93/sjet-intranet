@@ -1,0 +1,5 @@
+@extends('layout')
+@section('title','Kompetencer og kursuskatalog')
+@section('content')
+<div class="eyebrow">KLS / KATALOGER</div><h1>Kompetencer og kurser</h1><p class="muted">Vedligehold de fælles navne. Eksisterende registreringer og vurderinger bevares.</p><div class="grid two">@foreach(['competencies'=>'Kompetencer','courses'=>'Kurser'] as $kind=>$heading)<section class="card"><h2>{{ $heading }}</h2>@foreach($$kind as $entry)<form method="post" action="{{ route('development.catalog.save') }}" class="catalog-row">@csrf<input type="hidden" name="kind" value="{{ $kind }}"><input type="hidden" name="id" value="{{ $entry->id }}"><label>Navn<input name="name" value="{{ $entry->name }}" required maxlength="190"></label><button type="submit" class="btn secondary small">Gem</button></form>@endforeach<form method="post" action="{{ route('development.catalog.save') }}">@csrf<input type="hidden" name="kind" value="{{ $kind }}"><label>Nyt navn<input name="name" required maxlength="190"></label><button type="submit" class="btn">Tilføj</button></form></section>@endforeach</div>
+@endsection
